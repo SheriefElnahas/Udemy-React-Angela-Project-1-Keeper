@@ -1,0 +1,48 @@
+.NewNoteForm form{
+    max-width: 500px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin:3rem auto;
+    position: relative;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+}
+
+.NewNoteForm input, .NewNoteForm textarea {
+    border:none;
+    width:100%;
+    outline: none;
+    padding:1rem;
+    font-size:1.2rem;
+    font-family: inherit;
+
+}
+
+.NewNoteForm input {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.NewNoteForm textarea {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    resize:none;
+}
+
+button {
+    position: absolute;
+    bottom:-20px;
+    right:20px;
+    border:none;
+    padding:1rem 0.5rem;
+    border-radius: 50%;
+    background:orange;
+    font-size:14px;
+    color:#fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background:teal;
+}
