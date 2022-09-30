@@ -30,7 +30,7 @@
     resize:none;
 }
 
-button {
+.NewNoteForm button {
     position: absolute;
     bottom:-20px;
     right:20px;
@@ -43,6 +43,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.NewNoteForm button:hover {
     background:teal;
 }

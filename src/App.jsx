@@ -1,20 +1,37 @@
 import './App.css';
+import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Note from "./components/Note";
-import  notes  from "./notes";
 import NewNoteForm from './components/NewNoteForm';
 
+
+
 function App() {
+  const [notes, setNotes ] = React.useState([
+    {
+      id: uuidv4(),
+      title: "Anime",
+      content: "Attack On Titan"
+    }
+  ]);
   const notesElement = notes.map((note) => {
-   return <Note title={note.title} content={note.content} key={note.key} />
+   return <Note title={note.title} content={note.content} key={note.id} />
   })
+
+  function addNote(note) {
+    const newNote = {...note, id: uuidv4()}
+    setNotes(oldState => {
+      return [...oldState, newNote]
+    })
+  }
 
   return (
     <div className="App">
       <Header />
-      {/* {notesElement} */}
-      <NewNoteForm />
+      <NewNoteForm addNote={addNote} />
+       {notesElement}
       <Footer />
     </div>
   )
