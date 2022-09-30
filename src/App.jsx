@@ -14,16 +14,32 @@ function App() {
       id: uuidv4(),
       title: "Anime",
       content: "Attack On Titan"
-    }
+    },
+    {
+      id: uuidv4(),
+      title: "Tv",
+      content: "Squid Game"
+    },
+    {
+      id: uuidv4(),
+      title: "Movie",
+      content: "The Dark Knight"
+    },
   ]);
   const notesElement = notes.map((note) => {
-   return <Note title={note.title} content={note.content} key={note.id} />
+   return <Note title={note.title} content={note.content} key={note.id} id={note.id} deleteNote={deleteNote}/>
   })
 
   function addNote(note) {
     const newNote = {...note, id: uuidv4()}
     setNotes(oldState => {
       return [...oldState, newNote]
+    })
+  }
+
+  function deleteNote(noteId) {
+    setNotes(oldState => {
+      return oldState.filter(note => note.id !== noteId);
     })
   }
 
